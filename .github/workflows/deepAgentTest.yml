@@ -48,6 +48,7 @@ jobs:
     - name: Run all tests
       if: github.event.inputs.tags == ''
       run: |
+        npm run clean
         npm run test
         npm run report
       env:
@@ -58,6 +59,7 @@ jobs:
     - name: Run tests with specific tag
       if: github.event.inputs.tags != ''
       run: |
+        npm run clean
         npm run test:tag "@${{ github.event.inputs.tags }}"
         npm run report
       env:
