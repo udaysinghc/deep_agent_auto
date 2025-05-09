@@ -35,46 +35,46 @@ jobs:
         node-version: '20.x'
         # Disable caching temporarily
         # cache: 'npm'
-        
+    
     - name: Install dependencies
-      working-directory: tests/regression/deepAgent/dailyRegressionDeepAgent
+      working-directory: ./tests/regression/deepAgent/dailyRegressionDeepAgent
       run: |
         npm ci
         npx playwright install --with-deps
-      
+    
     - name: Run all tests
       if: github.event.inputs.tags == ''
-      working-directory: tests/regression/deepAgent/dailyRegressionDeepAgent
+      working-directory: ./tests/regression/deepAgent/dailyRegressionDeepAgent
       run: npm run test
       env:
         CI: true
         ENVIRONMENT: ${{ env.ENVIRONMENT }}
-      
+    
     - name: Run tests with specific tag
       if: github.event.inputs.tags != ''
-      working-directory: tests/regression/deepAgent/dailyRegressionDeepAgent
+      working-directory: ./tests/regression/deepAgent/dailyRegressionDeepAgent
       run: npm run test:tag "@${{ github.event.inputs.tags }}"
       env:
         CI: true
         ENVIRONMENT: ${{ env.ENVIRONMENT }}
-      
+    
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-results-${{ github.run_id }}-${{ env.ENVIRONMENT }}
         path: |
-          tests/regression/deepAgent/dailyRegressionDeepAgent/test-results/
-          tests/regression/deepAgent/dailyRegressionDeepAgent/playwright-report/
-          tests/regression/deepAgent/dailyRegressionDeepAgent/reports/
+          ./tests/regression/deepAgent/dailyRegressionDeepAgent/test-results/
+          ./tests/regression/deepAgent/dailyRegressionDeepAgent/playwright-report/
+          ./tests/regression/deepAgent/dailyRegressionDeepAgent/reports/
         retention-days: 30
         if-no-files-found: warn
-        
+    
     - name: Upload Playwright traces on failure
       if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-traces-${{ github.run_id }}-${{ env.ENVIRONMENT }}
-        path: tests/regression/deepAgent/dailyRegressionDeepAgent/test-results/traces
+        path: ./tests/regression/deepAgent/dailyRegressionDeepAgent/test-results/traces
         retention-days: 30
         if-no-files-found: ignore
