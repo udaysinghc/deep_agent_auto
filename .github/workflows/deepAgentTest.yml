@@ -1,3 +1,4 @@
+# .github/workflows/deepAgentTest.yml
 name: Deep Agent Suite
 
 on:
@@ -12,7 +13,7 @@ on:
       Environment:
         description: "Which environment will be executed"
         required: true
-        type: "choice"
+        type: choice
         default: "prod"
         options: ["preprod", "staging", "stagingLatest", "prod"]
       tags:
@@ -33,38 +34,41 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20.x'
-    
-    - name: Debug - Environment Variables
-      run: |
-        echo "Selected Environment: %TEST_ENV%"
-      shell: cmd
-    
+        
     - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright Browsers
       run: |
-        npm ci
-        npx playwright install --with-deps
+        npx playwright install chromium
+        npx playwright install-deps chromium
+      
+    - name: Debug - Environment Variables
+      run: echo "Selected Environment: %TEST_ENV%"
       shell: cmd
-    
+      
     - name: Run all tests
       if: github.event.inputs.tags == ''
       run: |
+        set PLAYWRIGHT_BROWSERS_PATH=0
         npm run test
         npm run report
       env:
         CI: true
         TEST_ENV: ${{ env.TEST_ENV }}
       shell: cmd
-    
+      
     - name: Run tests with specific tag
       if: github.event.inputs.tags != ''
       run: |
+        set PLAYWRIGHT_BROWSERS_PATH=0
         npm run test:tag "@${{ github.event.inputs.tags }}"
         npm run report
       env:
         CI: true
         TEST_ENV: ${{ env.TEST_ENV }}
       shell: cmd
-    
+      
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v4
