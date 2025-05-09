@@ -24,7 +24,7 @@ jobs:
   test:
     runs-on: windows-latest
     env:
-      ENVIRONMENT: ${{ github.event.inputs.Environment || 'prod' }}
+      TEST_ENV: ${{ github.event.inputs.Environment || 'prod' }}
     
     steps:
     - uses: actions/checkout@v4
@@ -34,12 +34,9 @@ jobs:
       with:
         node-version: '20.x'
     
-    - name: Debug - List Directory Structure
+    - name: Debug - Environment Variables
       run: |
-        dir
-        cd features && dir
-        cd ..
-        cd reports && dir
+        echo "Selected Environment: %TEST_ENV%"
       shell: cmd
     
     - name: Install dependencies
@@ -55,7 +52,7 @@ jobs:
         npm run report
       env:
         CI: true
-        ENVIRONMENT: ${{ env.ENVIRONMENT }}
+        TEST_ENV: ${{ env.TEST_ENV }}
       shell: cmd
     
     - name: Run tests with specific tag
@@ -65,14 +62,14 @@ jobs:
         npm run report
       env:
         CI: true
-        ENVIRONMENT: ${{ env.ENVIRONMENT }}
+        TEST_ENV: ${{ env.TEST_ENV }}
       shell: cmd
     
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: test-results-${{ github.run_id }}-${{ env.ENVIRONMENT }}
+        name: test-results-${{ github.run_id }}-${{ env.TEST_ENV }}
         path: |
           reports/
           cucumber-report.html
@@ -84,7 +81,7 @@ jobs:
       if: failure()
       uses: actions/upload-artifact@v4
       with:
-        name: playwright-traces-${{ github.run_id }}-${{ env.ENVIRONMENT }}
+        name: playwright-traces-${{ github.run_id }}-${{ env.TEST_ENV }}
         path: |
           reports/traces/
           reports/screenshots/
