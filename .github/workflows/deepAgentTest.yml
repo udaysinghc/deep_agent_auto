@@ -37,9 +37,9 @@ jobs:
     - name: Debug - List Directory Structure
       run: |
         dir
-        dir features
-        dir pages
-        dir utils
+        cd features && dir
+        cd ..
+        cd reports && dir
       shell: cmd
     
     - name: Install dependencies
@@ -50,7 +50,9 @@ jobs:
     
     - name: Run all tests
       if: github.event.inputs.tags == ''
-      run: npm run test
+      run: |
+        npm run test
+        npm run report
       env:
         CI: true
         ENVIRONMENT: ${{ env.ENVIRONMENT }}
@@ -58,7 +60,9 @@ jobs:
     
     - name: Run tests with specific tag
       if: github.event.inputs.tags != ''
-      run: npm run test:tag "@${{ github.event.inputs.tags }}"
+      run: |
+        npm run test:tag "@${{ github.event.inputs.tags }}"
+        npm run report
       env:
         CI: true
         ENVIRONMENT: ${{ env.ENVIRONMENT }}
@@ -70,9 +74,9 @@ jobs:
       with:
         name: test-results-${{ github.run_id }}-${{ env.ENVIRONMENT }}
         path: |
-          test-results/
-          playwright-report/
           reports/
+          cucumber-report.html
+          cucumber-report.json
         retention-days: 30
         if-no-files-found: warn
     
@@ -81,6 +85,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-traces-${{ github.run_id }}-${{ env.ENVIRONMENT }}
-        path: test-results/traces
+        path: |
+          reports/traces/
+          reports/screenshots/
         retention-days: 30
         if-no-files-found: ignore
