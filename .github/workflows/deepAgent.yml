@@ -1,8 +1,8 @@
 name: Deep Agent Suite
 
 on:
-  schedule:
-    # - cron: '0 15 * * *'  # 10 AM EST (15:00 UTC)
+  # schedule:
+  #   # - cron: '0 15 * * *'  # 10 AM EST (15:00 UTC)
   push:
     branches: [ "master" ]
   pull_request:
