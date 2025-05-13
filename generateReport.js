@@ -14,13 +14,6 @@ if (!fs.existsSync('reports/html')) {
     fs.mkdirSync('reports/html', { recursive: true });
 }
 
-// Log env vars to verify they loaded
-console.log('BROWSER_NAME:', process.env.BROWSER_NAME);
-console.log('BROWSER_VERSION:', process.env.BROWSER_VERSION);
-console.log('PLATFORM_NAME:', process.env.PLATFORM_NAME);
-console.log('EXECUTION_MODE:', process.env.EXECUTION_MODE);
-console.log('BUILD_NAME:', process.env.BUILD_NAME);
-
 generate({
     jsonDir: 'reports',
     reportPath: 'reports/html',
