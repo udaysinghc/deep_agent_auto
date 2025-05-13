@@ -2,7 +2,7 @@ name: Deep Agent Suite
 
 on:
   schedule:
-    - cron: '0 13 * * *'  # 8 AM EST (13:00 UTC)
+    - cron: '0 15 * * *'  # 10 AM EST (15:00 UTC)
   push:
     branches: [ "master" ]
   pull_request:
@@ -41,9 +41,8 @@ jobs:
     
     - name: Install dependencies
       run: |
-       npm ci
-       npx playwright install chromium
-       npx playwright install-deps chromium
+        npm ci
+        npx playwright install --with-deps
       shell: cmd
     
     - name: Run all tests
@@ -73,8 +72,10 @@ jobs:
         name: test-results-${{ github.run_id }}-${{ env.TEST_ENV }}
         path: |
           reports/
-          cucumber-report.html
-          cucumber-report.json
+          reports/html/
+          reports/html/index.html
+          reports/cucumber-report.html
+          reports/cucumber-report.json
         retention-days: 30
         if-no-files-found: warn
     

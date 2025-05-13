@@ -981,7 +981,7 @@ export class DeepAgentPage {
       const reportData = {
         taskDescription: searchedName,
         date: new Date(),
-        totalComputePoints: totalComputePoints,
+        totalComputePoints: totalComputePoints*100,
         timetaken: `${Number(this.elapsedTime.toFixed(2))} sec`,
         response: responseArray,
         search: searchArray,
