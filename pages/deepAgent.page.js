@@ -65,7 +65,7 @@ export class DeepAgentPage {
     this.sampleTaskDialogPopup = page.locator('[role*="dialog"]');
 
     this.cancelButton = page.locator(
-      '//div[@role="dialog"]//button[contains(text(),"cancel")]'
+      '//div[@role="dialog"]//button[contains(text(),"Cancel")]'
     );
     this.tryItButton = page.locator(
       '//div[@role="dialog"]//button[contains(text(),"Try it")]'

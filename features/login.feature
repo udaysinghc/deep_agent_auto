@@ -11,6 +11,14 @@ Feature: Login Functionality
     And I click the login button
     Then I should be logged in successfully
 
+    @Invalid_login  @smoke
+  Scenario: Successful login with valid credentials
+    Given I am on the login page
+    When I enter valid username "Udaysinghsi99@gmail.com"
+    And I enter valid password "Testuser@1234"
+    And I click the login button
+    Then I should be logged in successfully
+
   @Login
   Scenario: Login to the application
     Given the user enters username "testuser1744775890841@internalreai.com" and password "Testuser@123"
