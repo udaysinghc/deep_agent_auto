@@ -16,7 +16,7 @@
       "test:tag": "cucumber-js --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html --tags",
       "posttest:tag": "npm run report",
       "pretest:smoke": "npm run clean",
-      "test:smoke": "cucumber-js --tags @smoke || exit 0",
+      "test:smoke": "cucumber-js --tags|| exit 0",
       "posttest:smoke": "npm run report",
       "ci-test": "npm run clean && cucumber-js --config cucumber.js --format json:reports/cucumber-report.json",
       "report": "node generateMultipleCucumberReports.js"

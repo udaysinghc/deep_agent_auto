@@ -1,0 +1,58 @@
+[
+  {
+    "description": "  As a user\n  I want to be able to log in to the application\n  So that I can access my account",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;login-to-the-application",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Login to the application",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2961211700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "the user enters username \"testuser1744775890841@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "file:\\C:\\Users\\Admin\\Desktop\\Uday%20Githu%20rpo%20deepAgent\\deep_agent_auto\\features\\step_definitions\\login.steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4552504200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1685125800
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Login",
+            "line": 22
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Functionality",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]

@@ -1,8 +1,6 @@
 name: Deep Agent Suite
 
 on:
-  # schedule:
-  #   # - cron: '0 15 * * *'  # 10 AM EST (15:00 UTC)
   push:
     branches: [ "master" ]
   pull_request:
@@ -54,6 +52,7 @@ jobs:
         CI: true
         TEST_ENV: ${{ env.TEST_ENV }}
       shell: cmd
+      continue-on-error: false # Explicitly set to fail the workflow on test failures
     
     - name: Run tests with specific tag
       if: github.event.inputs.tags != ''
@@ -64,6 +63,7 @@ jobs:
         CI: true
         TEST_ENV: ${{ env.TEST_ENV }}
       shell: cmd
+      continue-on-error: false # Explicitly set to fail the workflow on test failures
     
     - name: Upload test results
       if: always()
@@ -89,3 +89,12 @@ jobs:
           reports/screenshots/
         retention-days: 30
         if-no-files-found: ignore
+
+    - name: Check Test Results
+      if: always()
+      run: |
+        IF %ERRORLEVEL% NEQ 0 (
+          echo "Tests failed!"
+          exit 1
+        )
+      shell: cmd
