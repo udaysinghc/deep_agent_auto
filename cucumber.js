@@ -1,14 +1,19 @@
-export default {
+const options = {
+  parallel: 1,
   paths: ['features/**/*.feature'],
-  import: ['features/step_definitions/**/*.js', 'features/support/**/*.js'],
+  import: [
+    'features/step_definitions/**/*.js',
+    'features/support/**/*.js'
+  ],
+  requireModule: ['@playwright/test'],
   format: [
     'progress',
-    'json:reports/cucumber-report.json',
     'html:reports/cucumber-report.html',
+    'json:reports/cucumber-report.json',
     '@cucumber/pretty-formatter'
   ],
   formatOptions: {
-    snippetInterface: 'async-now'
-  },
-  requireModule: ['@playwright/test']
+    snippetInterface: 'async-await'
+  }
 };
+export default options;
