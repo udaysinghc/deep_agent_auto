@@ -116,25 +116,25 @@ Then("I should fetch the search results", async function () {
 });
 
 When("I open the Deep Agent default sample task", async function () {
-  await deepAgentPage.openSampelTaskWindow();
+  await deepAgentPage.openSampleTaskWindow();
 });
 
 Then("I should see the Deep Agent popup window", async function () {
-  await deepAgentPage.isDsipalyedTaskDialogePopup();
+  await deepAgentPage.isDisplayedTaskDialogPopup();
 });
 
 Then("I should see the Cancel and Try it buttons", async function () {
   await deepAgentPage.page.waitForTimeout(3000);
-  await deepAgentPage.isDsipalyedCancelButton();
+  await deepAgentPage.isDisplayedCancelButton();
   await deepAgentPage.page.waitForTimeout(1000);
-  await deepAgentPage.isDsipalyedtryItButton();
+  await deepAgentPage.isDisplayedTryItButton();
 });
 
 When(
   "I search for a default sample task and enter {string}",
   async function (follow_up_query) {
-    await deepAgentPage.openSampelTaskWindow();
-    await deepAgentPage.isDsipalyedTaskDialogePopup();
+    await deepAgentPage.openSampleTaskWindow();
+    await deepAgentPage.isDisplayedTaskDialogPopup();
     await deepAgentPage.page.waitForTimeout(1000);
     await deepAgentPage.clickOnTryItButton();
     await deepAgentPage.page.waitForTimeout(1000);
@@ -146,7 +146,7 @@ When(
     deepAgentPage.elapsedTime = firstElapsedTime + secondElapsdTime;
 
     // Initial check
-    let pptxTextList = await deepAgentPage.fileDownlaod.allTextContents();
+    let pptxTextList = await deepAgentPage.fileDownload.allTextContents();
     let isViewFileVisible = pptxTextList.some(
       (text) =>
         text.trim().toLowerCase().endsWith(".pptx") ||
@@ -176,7 +176,7 @@ When(
       );
 
       // Step 2: Re-check after "yes"
-      pptxTextList = await deepAgentPage.fileDownlaod.allTextContents();
+      pptxTextList = await deepAgentPage.fileDownload.allTextContents();
       isViewFileVisible = pptxTextList.some(
         (text) =>
           text.trim().toLowerCase().endsWith(".pptx") ||
@@ -185,7 +185,7 @@ When(
 
       // Step 3: If still not found, try "convert to ppt"
       if (!isViewFileVisible) {
-        await deepAgentPage.enterPromaptQuery("convert to ppt");
+        await deepAgentPage.enterPromaptQuery("convert to pptx");
         await deepAgentPage.clickSendButton();
         const fifthElapsedTime =
           await deepAgentPage.waitforStopButtonInvisble();
@@ -202,7 +202,7 @@ When(
         );
 
         // Final check
-        pptxTextList = await deepAgentPage.fileDownlaod
+        pptxTextList = await deepAgentPage.fileDownload
           .locator("span.aafont-mono")
           .allTextContents();
 
@@ -297,7 +297,7 @@ When(
   "I search for all default sample task {string} and enter {string}",
   async function (sampleTaskName, Specify_the_prompat) {
     await deepAgentPage.clickOnSampleTaskDefault(sampleTaskName);
-    await deepAgentPage.isDsipalyedTaskDialogePopup();
+    await deepAgentPage.isDisplayedTaskDialogPopup();
     await deepAgentPage.page.waitForTimeout(1000);
     await deepAgentPage.clickOnTryItButton();
     await deepAgentPage.page.waitForTimeout(1000);

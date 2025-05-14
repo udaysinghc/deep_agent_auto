@@ -7,10 +7,10 @@ const __dirname = path.dirname(__filename);
 export class DeepAgentPage {
   constructor(page) {
     this.page = page;
-    this.chekoutButton = page.locator(
+    this.checkoutButton = page.locator(
       '//button[contains(text(), "Check it out")]'
     );
-    this.searchPromaptTextArea = page.locator('textarea[dir*="auto"]');
+    this.searchPromptTextArea = page.locator('textarea[dir*="auto"]');
     this.sendButton = page.locator('button [data-icon*="paper-plane"]');
     this.maxLimitTask = page.locator(
       "[class*='space-y-2 flex flex-col items-center']"
@@ -22,7 +22,7 @@ export class DeepAgentPage {
     this.statusOftask = page.locator('//div[contains(text(), "Completed")]');
     this.computePoint = page.locator('div[class*="underline cursor-pointer"]');
     this.downloadPath = path.join(__dirname, "../downloadfile");
-    this.fileDownlaod = page.locator(
+    this.fileDownload = page.locator(
       '[class*="svg-inline--fa fa-file text-bwleftblue"]+span'
     );
     this.viewFile = page.locator('[class*="file-magnifying-glass"]');
@@ -55,17 +55,17 @@ export class DeepAgentPage {
 
     this.monoTextpropamt = page.locator('//*[contains(@class,"font-mono")]');
 
-    this.sampleTaskDeafaultElement = page.locator(
+    this.sampleTaskDefaultElement = page.locator(
       '[class*="flex flex-col items-start self-stretch"]'
     );
 
     this.SampleTaskText = page.locator(
       '[class*="flex flex-col items-start self-stretch"] div[class*="font-normal flex items-center"]'
     );
-    this.sampleTaskDialogePopup = page.locator('[role*="dialog"]');
+    this.sampleTaskDialogPopup = page.locator('[role*="dialog"]');
 
     this.cancelButton = page.locator(
-      '//div[@role="dialog"]//button[contains(text(),"Cancel")]'
+      '//div[@role="dialog"]//button[contains(text(),"cancel")]'
     );
     this.tryItButton = page.locator(
       '//div[@role="dialog"]//button[contains(text(),"Try it")]'
@@ -87,12 +87,12 @@ export class DeepAgentPage {
   }
 
   async clickCheckoutButton() {
-    await this.chekoutButton.waitFor({ state: "visible" });
-    await this.chekoutButton.click();
+    await this.checkoutButton.waitFor({ state: "visible" });
+    await this.checkoutButton.click();
   }
 
   async enterPromapt(promat_user_search) {
-    await this.searchPromaptTextArea.fill(promat_user_search);
+    await this.searchPromptTextArea.fill(promat_user_search);
   }
 
   async enterPromaptQuery(follow_up_query) {
@@ -280,7 +280,7 @@ export class DeepAgentPage {
   async downloadFile() {
     try {
       // First check if any download buttons exist at all
-      const downloadButtonCount = await this.fileDownlaod.count();
+      const downloadButtonCount = await this.fileDownload.count();
       console.log(`Found ${downloadButtonCount} download buttons`);
 
       if (downloadButtonCount === 0) {
@@ -301,7 +301,7 @@ export class DeepAgentPage {
 
       try {
         // Make sure button is in viewport
-        await this.fileDownlaod.nth(lastIndex).scrollIntoViewIfNeeded();
+        await this.fileDownload.nth(lastIndex).scrollIntoViewIfNeeded();
         await this.page.waitForTimeout(1000); // Longer delay after scrolling
 
         // Set up download promise
@@ -314,7 +314,7 @@ export class DeepAgentPage {
 
         // Click with force option to ensure click happens
         console.log(`Clicking last download button (${lastIndex + 1})`);
-        await this.fileDownlaod
+        await this.fileDownload
           .nth(lastIndex)
           .click({ force: true, timeout: 10000 });
 
@@ -365,7 +365,7 @@ export class DeepAgentPage {
           );
 
           // Make sure button is in viewport
-          await this.fileDownlaod.nth(i).scrollIntoViewIfNeeded();
+          await this.fileDownload.nth(i).scrollIntoViewIfNeeded();
           await this.page.waitForTimeout(1000); // Longer delay after scrolling
 
           // Set up download promise
@@ -378,7 +378,7 @@ export class DeepAgentPage {
 
           // Click with force option to ensure click happens
           console.log(`Clicking download button ${i + 1}`);
-          await this.fileDownlaod.nth(i).click({ force: true, timeout: 10000 });
+          await this.fileDownload.nth(i).click({ force: true, timeout: 10000 });
 
           // Now wait for the download
           const download = await downloadPromise.catch((error) => {
@@ -602,28 +602,18 @@ export class DeepAgentPage {
   }
 
   async closeBrowserPopup() {
+    // Check if the popup is visible first
     try {
-      const popupCount = await this.browserPopup.count();
-      console.log(`Found ${popupCount} browser popups`);
-
-      if (popupCount > 0) {
-        console.log("Attempting to close browser popup");
-        await this.browserPopup.first().click({ force: true, timeout: 5000 });
+      const isVisible = await this.browserPopup.isVisible();
+      if (isVisible) {
+        await this.browserPopup.click();
         console.log("Browser popup closed successfully");
-        return true;
       } else {
-        console.log("No browser popup found to close");
-        return false;
+        console.log("Browser popup was not visible, nothing to close");
       }
     } catch (error) {
       console.error("Error closing browser popup:", error.message);
-      // Don't throw an error, just return false
-      return false;
     }
-  }
-
-  async closeBrowserPopup() {
-    await this.browserPopup.click();
   }
 
   async searchAndFetchAllResults() {
@@ -981,7 +971,7 @@ export class DeepAgentPage {
       const reportData = {
         taskDescription: searchedName,
         date: new Date(),
-        totalComputePoints: totalComputePoints*100,
+        totalComputePoints: totalComputePoints,
         timetaken: `${Number(this.elapsedTime.toFixed(2))} sec`,
         response: responseArray,
         search: searchArray,
@@ -1024,16 +1014,8 @@ export class DeepAgentPage {
     }
   }
 
-  async openSampelTaskWindow() {
-    try {
-      const elements = await this.sampleTaskDeafaultElement.all();
-      for (let i = 1; i < elements.length; i++) {
-        await elements[i].click();
-        break; // Break after clicking first element
-      }
-    } catch (error) {
-      console.error("Error in openSampelTaskWindow:", error.message);
-    }
+  async openSampleTaskWindow() {
+    await this.SampleTaskText.first().click();
   }
 
   async clickOnSampleTaskDefault(taskName) {
@@ -1060,44 +1042,24 @@ export class DeepAgentPage {
     );
   }
 
-  async isDsipalyedTaskDialogePopup() {
-    try {
-      const isVisible = await this.sampleTaskDialogePopup.isVisible();
-      console.log(`Task dialog popup visibility status: ${isVisible}`);
-      return isVisible;
-    } catch (error) {
-      console.error(
-        "Error checking task dialog popup visibility:",
-        error.message
-      );
-      return false;
-    }
+  async isDisplayedTaskDialogPopup() {
+    await this.sampleTaskDialogPopup.waitFor({ state: "visible" });
+    console.log("Task popup window is displayed");
+    return true;
   }
 
-  async isDsipalyedCancelButton() {
-    try {
-      const isVisible = await this.cancelButton.isVisible();
-      console.log(`Task Cancel button  visibility status: ${isVisible}`);
-      return isVisible;
-    } catch (error) {
-      console.error("Error checking Cancel button visibility:", error.message);
-      return false;
-    }
+  async isDisplayedCancelButton() {
+    await this.cancelButton.waitFor({ state: "visible" });
+    console.log("Cancel button is displayed");
+    return true;
   }
 
-  async isDsipalyedtryItButton() {
-    try {
-      const isVisible = await this.tryItButton.isVisible();
-      console.log(`Task Try it button visibility status: ${isVisible}`);
-      return isVisible;
-    } catch (error) {
-      console.error(
-        "Error checking task Try it button visibility:",
-        error.message
-      );
-      return false;
-    }
+  async isDisplayedTryItButton() {
+    await this.tryItButton.waitFor({ state: "visible" });
+    console.log("Try it button is displayed");
+    return true;
   }
+
   async clickOncancelButton() {
     await this.cancelButton.click();
   }
@@ -1111,7 +1073,7 @@ export class DeepAgentPage {
     expectedStatus,
     computePointLimit
   ) {
-    const totalElements = await this.sampleTaskDeafaultElement.count();
+    const totalElements = await this.sampleTaskDefaultElement.count();
     console.log(`Processing ${totalElements} sample tasks`);
 
     for (let i = 0; i < totalElements; i++) {
@@ -1119,7 +1081,7 @@ export class DeepAgentPage {
         console.log(`Processing task ${i + 1} of ${totalElements}`);
 
         // Click on sample task and try it
-        await this.sampleTaskDeafaultElement.nth(i).click();
+        await this.sampleTaskDefaultElement.nth(i).click();
         await this.page.waitForTimeout(5000);
         await this.clickOnTryItButton();
         await this.page.waitForTimeout(5000);
