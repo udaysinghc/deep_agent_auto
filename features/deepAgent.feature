@@ -1,19 +1,19 @@
-# Feature: Dashboard Functionality
-#   As a logged in user
-#   I want to access and view my dashboard
-#   So that I can see my personalized information and overview
+Feature: Dashboard Functionality
+  As a logged in user
+  I want to access and view my dashboard
+  So that I can see my personalized information and overview
 
-#   Background:
-#     Given the user enters username "testuser_Deepagent2@internalreai.com" and password "Testuser@123"
-#     Then I should be logged in successfully
-#     When I click the deep Agent option
+  Background:
+    Given the user enters username "testuser_Deepagent2@internalreai.com" and password "Testuser@123"
+    Then I should be logged in successfully
+    When I click the deep Agent option
 
-  # @DeepAgentHomePage @smoke
-  # Scenario: Check default prompt from the Deep Agent popup window and verify "Cancel" and "Try" buttons
-  #   Given I click the check out from the welcome window
-  #   When I open the Deep Agent default sample task
-  #   Then I should see the Deep Agent popup window
-  #   And I should see the Cancel and Try it buttons
+  @DeepAgentHomePage @smoke
+  Scenario: Check default prompt from the Deep Agent popup window and verify "Cancel" and "Try" buttons
+    Given I click the check out from the welcome window
+    When I open the Deep Agent default sample task
+    Then I should see the Deep Agent popup window
+    And I should see the Cancel and Try it buttons
 
 #   @DeepAgentDefaultSingleSampleTaskPPT @smoke
 #   Scenario Outline: Search a single default sample task from deep Agent
