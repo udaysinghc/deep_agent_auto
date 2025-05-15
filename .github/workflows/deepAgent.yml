@@ -44,25 +44,31 @@ jobs:
           npx playwright install --with-deps
         shell: pwsh
 
-      - name: Run all tests
-        if: github.event.inputs.tags == ''
-        run: |
-          npm run test
-          npm run report
-        env:
-          CI: true
-          TEST_ENV: ${{ env.TEST_ENV }}
-        shell: pwsh
+     - name: Run all tests
+       if: github.event.inputs.tags == ''
+       run: |
+         npm run test
+         echo "Test Exit Code: $?"
+        EXIT_CODE=$?
+        npm run report
+        exit $EXIT_CODE
+      env:
+      CI: true
+      TEST_ENV: ${{ env.TEST_ENV }}
+      shell: bash
 
       - name: Run tests with specific tag
         if: github.event.inputs.tags != ''
         run: |
           npm run test:tag "@${{ github.event.inputs.tags }}"
+          echo "Test Exit Code: $?"
+          EXIT_CODE=$?
           npm run report
-        env:
-          CI: true
-          TEST_ENV: ${{ env.TEST_ENV }}
-        shell: pwsh
+          exit $EXIT_CODE
+       env:
+       CI: true
+       TEST_ENV: ${{ env.TEST_ENV }}
+       shell: bash
 
       - name: Debug - List all files in reports folder
         run: |
