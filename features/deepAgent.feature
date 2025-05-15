@@ -1,4 +1,4 @@
-Feature: Dashboard Functionality
+Feature: DeepAgent Functionality
   As a logged in user
   I want to access and view my dashboard
   So that I can see my personalized information and overview
