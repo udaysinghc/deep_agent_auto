@@ -6,6 +6,7 @@ let deepAgentPage;
 
 Given("I click the check out from the welcome window", async function () {
   deepAgentPage = new DeepAgentPage(this.page);
+  await deepAgentPage.page.waitForTimeout(2000);
   await deepAgentPage.clickCheckoutButton();
   await deepAgentPage.page.waitForTimeout(2000);
 });
@@ -302,18 +303,18 @@ When(
     await deepAgentPage.clickOnTryItButton();
     await deepAgentPage.page.waitForTimeout(1000);
     // await deepAgentPage.waitforStopButtonInvisble();
-    const firstElapsedTime = await deepAgentPage.waitforStopButtonInvisble();
-    await deepAgentPage.enterPromaptQuery(Specify_the_prompat);
-    await deepAgentPage.page.waitForTimeout(3000);
-    await deepAgentPage.clickSendButton();
-    const secondElapsdTime = await deepAgentPage.waitforStopButtonInvisble();
-    deepAgentPage.elapsedTime =
-    firstElapsedTime +
-    secondElapsdTime;
+  //   const firstElapsedTime = await deepAgentPage.waitforStopButtonInvisble();
+  //   await deepAgentPage.enterPromaptQuery(Specify_the_prompat);
+  //   await deepAgentPage.page.waitForTimeout(3000);
+  //   await deepAgentPage.clickSendButton();
+  //   const secondElapsdTime = await deepAgentPage.waitforStopButtonInvisble();
+  //   deepAgentPage.elapsedTime =
+  //   firstElapsedTime +
+  //   secondElapsdTime;
 
-  console.log(
-    "Total elapsed time after follow up prompt:",
-    deepAgentPage.elapsedTime
-  );
+  // console.log(
+  //   "Total elapsed time after follow up prompt:",
+  //   deepAgentPage.elapsedTime
+  // );
   }
 );

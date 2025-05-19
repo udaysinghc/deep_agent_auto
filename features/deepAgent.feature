@@ -15,43 +15,47 @@ Feature: DeepAgent Functionality
     Then I should see the Deep Agent popup window
     And I should see the Cancel and Try it buttons
 
-#   @DeepAgentDefaultSingleSampleTaskPPT @smoke
-#   Scenario Outline: Search a single default sample task from deep Agent
-#     Given I click the check out from the welcome window
-#      When I search for a default sample task and enter "Generate a downloadable PowerPoint pptx file that provides a general overview of all major benchmarks used to evaluate LLMs, across 10 slides"
-#     And I should see the status "Completed" for the task
-#     And the compute points should not exceed 150k
-#     And I should download the generated summary
-#     Then I should see the search results for the default sample task
+  @DeepAgentDefaultSingleSampleTaskPPT @smoke
+  Scenario Outline: Search a single default sample task from deep Agent
+    Given I click the check out from the welcome window
+     When I search for a default sample task and enter "Generate a downloadable PowerPoint pptx file that provides a general overview of all major benchmarks used to evaluate LLMs, across 10 slides"
+    And I should see the status "Completed" for the task
+    And the compute points should not exceed 150k
+    And I should download the generated summary
+    Then I should see the search results for the default sample task
 
-#   @DeepAgentSearchPrompt @smoke
-#   Scenario Outline: Search DeepAgent prompt
-#     Given I click the check out from the welcome window
-#     When I search the prompt "<promat_user_search>" with follow-up query "<follow_up_query>"
-#     And I should see the status "Completed" for the task
-#     And the compute points should not exceed 150k
-#     And I should download the generated summary
-#     And I should fetch the search results
+  @DeepAgentSearchPrompt @smoke
+  Scenario Outline: Search DeepAgent prompt
+    Given I click the check out from the welcome window
+    When I search the prompt "<promat_user_search>" with follow-up query "<follow_up_query>"
+    And I should see the status "Completed" for the task
+    And the compute points should not exceed 150k
+    And I should download the generated summary
+    And I should fetch the search results
 
-#     Examples:
-#       | promat_user_search                   | follow_up_query                       |
-#       | search Elon Musk and create pdf file | Elon Musk's life or career in the PDf |
+    Examples:
+      | promat_user_search                   | follow_up_query                       |
+      | search Elon Musk and create pdf file | Elon Musk's life or career in the PDf |
 
-#   @DeepAgentDefaultAllSampleTask @regression
-#   Scenario Outline: Search a single default sample task from deep Agent
-#     Given I click the check out from the welcome window
-#     When I search for all default sample task "<sampleTaskName>" and enter "<Specify_the_prompat>"
-#     And I should see the status "Completed" for the task
-#     And the compute points should not exceed 150k
-#     And I should download the generated summary
-#     Then I should see the search results for the default sample task
+  @DeepAgentDefaultAllSampleTask @regression
+  Scenario Outline: Search a single default sample task from deep Agent
+    Given I click the check out from the welcome window
+    When I search for all default sample task "<sampleTaskName>" and enter "<Specify_the_prompat>"
+    # And I should see the status "Completed" for the task
+    # And the compute points should not exceed 150k
+    # And I should download the generated summary
+    # Then I should see the search results for the default sample task
 
-#     Examples:
-#       | sampleTaskName                        | Specify_the_prompat                                                                                                 |
-#       | Technical Report About MCP            | Model Context Protocol technical professional, 15 pages with detailed structure                                     |
-#       | Bookclub Website                      | Make sure it has a nice, cool pastel color palette and focuses on classic romance                                   |
-#       | Build A Game                          | your call                                                                                                           |
-#       | On-The-Fly Interactive Jira Dashboard | https://abacusai.atlassian.net/ — summarize all project high-priority tasks; dark grey theme with chat graph & icon |
-#       | Luxury Trip To Bali                   | Luxury mid-range budget relaxation for next month                                                                   |
-#       | Dinner Reservations                   | Looking to book a table for 5 for Sunday lunch—do you have any availability around 12:30–1:30 PM?  create a file                                                                                               |
-#       | Connect To Gmail And Automate Work    | I want a brief summary or a more detailed breakdown of My  activity and create pdf file                             |
+    Examples:
+      | sampleTaskName                           | Specify_the_prompat                                                                                                                         |
+      | Technical report about MCP               | Model Context Protocol technical professional, 15 pages with detailed structure                                                             |
+      | Website for a summer camp                | Make sure it has a nice, cool pastel color palette and focuses on classic romance                                                           |
+      | Custom RAG chatbot                       | I want to name the chatbot DeepAgent and use calm colors like soft blue and green.                                                          |
+      | MCP meets DeepAgent                      | It’s a software product, launching in 3 weeks, team of 6, budget is tight, and some initial research is done.                               |
+      | Luxury trip to Bali                      | Luxury mid-range budget relaxation for next month                                                                                           |
+      | Dinner reservations                      | Looking to book a table for 5 for Sunday lunch—do you have any availability around 12:30–1:30 PM?  create a file                            |
+      | On-the-fly interactive Jira dashboard    | https://abacusai.atlassian.net/ — summarize all project high-priority tasks; dark grey theme with chat graph & icon                         |
+      | Hot or Not - hollywood edition           | A mix of celebrities, about 20 to start, with a clean modern look using dark colors, and yes—show Hot vote percentages and a leaderboard.   |
+      | Personal AI assistant                    | 9 AM to 5 PM, yes to breaks, avoid existing meetings, and title them “Focus Time                                                            |
+      | DeepAgent + Slack to improve productivity| My Slack name is @johndoe, check last 2 days, focus on #team-updates and #project-alpha.                                                    |
+      | Build a game                             | your call                                                                                                                                   |

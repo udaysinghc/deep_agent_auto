@@ -1,0 +1,1124 @@
+[
+  {
+    "description": "  As a logged in user\n  I want to access and view my dashboard\n  So that I can see my personalized information and overview",
+    "elements": [
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 51,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1846961499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4160184300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3188414199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2009123100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4098884399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Technical report about MCP\" and enter \"Model Context Protocol technical professional, 15 pages with detailed structure\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3363044099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1133874400
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 52,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1155211199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4015237600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3026214700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3407808200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4092481500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Website for a summer camp\" and enter \"Make sure it has a nice, cool pastel color palette and focuses on classic romance\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3280732000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1287020700
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 53,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1225943699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4793591199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3118147000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1998327199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4089084299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Custom RAG chatbot\" and enter \"I want to name the chatbot DeepAgent and use calm colors like soft blue and green.\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3309939800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1603316100
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 54,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1304260199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4587266400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3052849099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2738209900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4102752800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"MCP meets DeepAgent\" and enter \"It’s a software product, launching in 3 weeks, team of 6, budget is tight, and some initial research is done.\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3470287700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1329306499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 55,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1151778200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4627779399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2973609500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2583697899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4134398700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Luxury trip to Bali\" and enter \"Luxury mid-range budget relaxation for next month\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3695469299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 854115300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 56,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1248169000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3342879300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2960651499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2574324600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4095718799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Dinner reservations\" and enter \"Looking to book a table for 5 for Sunday lunch—do you have any availability around 12:30–1:30 PM?  create a file\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3505966000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1377586200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 57,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1120297000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3956483000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3198627200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1973121599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4102976699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"On-the-fly interactive Jira dashboard\" and enter \"https://abacusai.atlassian.net/ — summarize all project high-priority tasks; dark grey theme with chat graph & icon\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3546568899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1239701399
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 58,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1146553600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3425404999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2990956500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1648121800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4117057300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Hot or Not - hollywood edition\" and enter \"A mix of celebrities, about 20 to start, with a clean modern look using dark colors, and yes—show Hot vote percentages and a leaderboard.\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3459610699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1297162199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 59,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1120305900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5272293999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2972321599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2793406399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4106118099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Personal AI assistant\" and enter \"9 AM to 5 PM, yes to breaks, avoid existing meetings, and title them “Focus Time\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3580556400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 608715599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 60,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1260480899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3814117100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2978150300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2375481399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4099694199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"DeepAgent + Slack to improve productivity\" and enter \"My Slack name is @johndoe, check last 2 days, focus on #team-updates and #project-alpha.\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3508496199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 998457499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "deepagent-functionality;search-a-single-default-sample-task-from-deep-agent",
+        "keyword": "Scenario Outline",
+        "line": 61,
+        "name": "Search a single default sample task from deep Agent",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1344031499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user enters username \"testuser_Deepagent2@internalreai.com\" and password \"Testuser@123\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3297161600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2976462300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the deep Agent option",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2312808900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I click the check out from the welcome window",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4095663900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "I search for all default sample task \"Build a game\" and enter \"your call\"",
+            "match": {
+              "location": "..\\..\\Uday GitHub DeepAgentRepo\\deep_agent_auto\\node_modules\\@cucumber\\cucumber\\lib\\support_code_library_builder\\get_definition_line_and_uri.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3588009599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1377736100
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeepAgentDefaultAllSampleTask",
+            "line": 40
+          },
+          {
+            "name": "@regression",
+            "line": 40
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "deepagent-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "DeepAgent Functionality",
+    "tags": [],
+    "uri": "features\\deepAgent.feature"
+  }
+]
