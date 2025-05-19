@@ -4,8 +4,9 @@ on:
   schedule:
     - cron: '0 15 * * *'  # 10 AM EST
   push:
-    branches:
-      - '**'   # 👈 All branches
+      branches:
+      - master
+      - UpdateYMLFile     # 👈 Add your branch name here
   pull_request:
     branches:
       - master
