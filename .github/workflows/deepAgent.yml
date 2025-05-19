@@ -5,7 +5,6 @@ on:
     - cron: '0 15 * * *'  # 10 AM EST
   push:
       branches:
-      - master
       - UpdateYMLFile     # 👈 Add your branch name here
   pull_request:
     branches:
