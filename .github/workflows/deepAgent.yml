@@ -2,11 +2,13 @@ name: Deep Agent Suite
 
 on:
   schedule:
-    - cron: '0 15 * * *'  # 10 AM EST (15:00 UTC)
+    - cron: '0 15 * * *'  # 10 AM EST
   push:
-    branches: [ "master" ]
+    branches:
+      - '**'   # 👈 All branches
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       Environment:
@@ -19,6 +21,7 @@ on:
         description: 'Test tag to run (without @)'
         required: false
         type: string
+
 
 jobs:
   test:
