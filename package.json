@@ -8,11 +8,15 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-      "clean": "node -e \"const fs=require('fs'); const path=require('path'); ['reports', 'test-results'].forEach(dir => {try {fs.rmSync(path.join(__dirname, dir), {recursive: true, force: true}); fs.mkdirSync(path.join(__dirname, dir), {recursive: true});} catch (e) {console.error(e)}});\"",
+    "setup": "node setup-project.js",
+    "test-slack": "node helpers/testSlackIntegration.js",
+    "check-slack": "node helpers/checkSlackConfig.js",
+    "clean": "node -e \"const fs=require('fs'); const path=require('path'); ['reports', 'test-results'].forEach(dir => {try {fs.rmSync(path.join(__dirname, dir), {recursive: true, force: true}); fs.mkdirSync(path.join(__dirname, dir), {recursive: true});} catch (e) {console.error(e)}});\"",
     "test": "cucumber-js --config cucumber.js --format html:reports/cucumber-report.html --format json:reports/cucumber-report.json --format summary",
     "test:tag": "cucumber-js --config cucumber.js --tags",
     "ci-test": "node -e \"const fs=require('fs'); const path=require('path'); ['reports', 'test-results'].forEach(dir => {try {fs.rmSync(path.join(__dirname, dir), {recursive: true, force: true}); fs.mkdirSync(path.join(__dirname, dir), {recursive: true});} catch (e) {console.error(e)}});\" && cucumber-js --config cucumber.js",
-      "report": "node generateMultipleCucumberReports.js"
+    "report": "node multipleCucumberReports.js",
+    "run:regression:parallel": "cucumber-js --tags '@smoke or @regression' --parallel 4"
   },
   "keywords": [
     "playwright",
@@ -23,12 +27,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/cucumber": "^11.3.0",
     "@cucumber/html-formatter": "^21.10.0",
     "@cucumber/pretty-formatter": "^1.0.0",
     "@playwright/test": "^1.35.0",
+    "@slack/web-api": "^6.11.2",
     "cross-env": "^7.0.3",
-    "cucumber-html-reporter": "^7.2.0",
+    "cucumber-html-reporter": "^6.0.0",
     "dotenv": "^16.5.0",
     "fs": "^0.0.1-security",
     "node-fetch": "^3.3.2",

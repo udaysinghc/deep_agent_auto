@@ -16,4 +16,5 @@ const options = {
     snippetInterface: 'async-await'
   }
 };
+
 export default options;

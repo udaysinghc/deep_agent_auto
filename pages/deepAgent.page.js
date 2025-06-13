@@ -7,10 +7,10 @@ const __dirname = path.dirname(__filename);
 export class DeepAgentPage {
   constructor(page) {
     this.page = page;
-    this.checkoutButton = page.locator(
+    this.chekoutButton = page.locator(
       '//button[contains(text(), "Check it out")]'
     );
-    this.searchPromptTextArea = page.locator('textarea[dir*="auto"]');
+    this.searchPromaptTextArea = page.locator('textarea[dir*="auto"]');
     this.sendButton = page.locator('button [data-icon*="paper-plane"]');
     this.maxLimitTask = page.locator(
       "[class*='space-y-2 flex flex-col items-center']"
@@ -22,7 +22,7 @@ export class DeepAgentPage {
     this.statusOftask = page.locator('//div[contains(text(), "Completed")]');
     this.computePoint = page.locator('div[class*="underline cursor-pointer"]');
     this.downloadPath = path.join(__dirname, "../downloadfile");
-    this.fileDownload = page.locator(
+    this.fileDownlaod = page.locator(
       '[class*="svg-inline--fa fa-file text-bwleftblue"]+span'
     );
     this.viewFile = page.locator('[class*="file-magnifying-glass"]');
@@ -55,14 +55,14 @@ export class DeepAgentPage {
 
     this.monoTextpropamt = page.locator('//*[contains(@class,"font-mono")]');
 
-    this.sampleTaskDefaultElement = page.locator(
+    this.sampleTaskDeafaultElement = page.locator(
       '[class*="flex flex-col items-start self-stretch"]'
     );
 
     this.SampleTaskText = page.locator(
       '[class*="flex flex-col items-start self-stretch"] div[class*="font-normal flex items-center"]'
     );
-    this.sampleTaskDialogPopup = page.locator('[role*="dialog"]');
+    this.sampleTaskDialogePopup = page.locator('[role*="dialog"]');
 
     this.cancelButton = page.locator(
       '//div[@role="dialog"]//button[contains(text(),"Cancel")]'
@@ -83,16 +83,91 @@ export class DeepAgentPage {
 
     this.dropDown = page.locator("[role*='combobox']");
 
+    this.CreatedChatBotlink = page.locator("a[href*='https://apps.']");
+    this.CreatedChatBotlink = page.locator("a[href*='apps.abacus.ai']");
+    this.previewWebPage = page.locator("[data-icon*='globe-pointer']");
+    this.dataBase = page.locator("[data-icon*='database']");
+    this.previewButton = page.locator("[data-icon='play']");
+    this.datBaseVisible = page.locator("//span[text()='Export CSV']");
+
+    this.agentTitle = page.locator("#complex_agent__title");
+
+    this.deployOption = page.locator(
+      "//span[contains(@class, 'whitespace-nowrap')  and contains(text(), 'Deploy')]"
+    );
+    this.deploymentName = page.locator("input[class*='flex-1 text-darkcolor']");
+    this.deployButton = page.locator(
+      "//button[contains(@class, 'inline-flex') and contains(@class, 'bg-bwleftblue') and contains(text(), 'Deploy')]"
+    );
+    this.deploysucessmessage = page.locator(
+      "//div[contains(text(), 'Deployment successful')]"
+    );
+
+    this.deployLink = page.locator(
+      "//span[contains(text(),'Deployed URL')]/..//a"
+    );
+    this.analyticsLink = page.locator(
+      "//*[contains(@class,'flex items-center')]//following::*[contains(text(), 'Analytics')]"
+    );
+    this.calculator = page.locator(
+      "//*[contains(@class,'flex items-center')]//following::*[contains(text(), 'Calculator')]"
+    );
+    this.calender = page.locator(
+      "//*[contains(@class,'flex items-center')]//following::*[contains(text(), 'Calendar')]"
+    );
+    this.setting = page.locator(
+      "//*[contains(@class,'flex items-center')]//following::*[contains(text(), 'Settings')]"
+    );
+
+    // downalod button from agent computer
+
+    this.flexTypeFile = page.locator("[id*='rc'] [role='combobox'] span");
+
+    this.fileTypeOptions = page.locator("[role='option']");
+
+    this.computerFileDownloadOption = page.locator(
+      "[id*='rc:'] [data-icon*='download']"
+    );
+    this.spinLoadForFile = page.locator("[class*='block pointer']");
+    this.chatImage = page.locator("(//canvas[@role='img'])[1]");
+
+    // video gerneration 
+  this.videoGenerationPreview=page.locator("//span[contains(text(), 'Preview Video')]");
+  this.videoGenerationLink=page.locator("a[href*='https://cdn.abacus.ai/video']");
+  this.videoGenerationDownload=page.locator("[data-icon*='arrow-down-to-line']");
+
+  this.htmlCode=page.locator("(//span[.='html'])[1]");
+
+  //  Perform the registration process-
+  this.signUpButton = page.locator("//*[text()='Sign Up']");
+  this.nameField= page.locator("[placeholder*='full name']");
+  this.emailField= page.locator("[placeholder*='email']");
+  this.passwordField = page.locator("(//*[@type='password'])[1]");
+  this.confirmPasswordField = page.locator("(//*[@type='password'])[2]");
+
+  this.createAccountButton = page.locator("[type='submit']");
+
+  this.dropDownForDB= page.locator("(//button[@role='combobox'])[2]");
+  this.refreshButton= page.locator("[class*='center border-b'] svg[data-icon='arrows-rotate']")
+
+  this.userAdded= page.locator("//*[text()='testuser@gmail.com']")
+
     this.elapsedTime = 0;
   }
 
   async clickCheckoutButton() {
-    await this.checkoutButton.waitFor({ state: "visible" });
-    await this.checkoutButton.click();
+    // await this.chekoutButton.waitFor({ state: "visible" });
+    // await this.chekoutButton.click();
+    await this.chekoutButton.waitFor({ state: "visible", timeout: 10000 });
+    const isEnabled = await this.chekoutButton.isEnabled();
+    if (!isEnabled) {
+      throw new Error("Checkout button is visible but not enabled");
+    }
+    await this.chekoutButton.click();
   }
 
   async enterPromapt(promat_user_search) {
-    await this.searchPromptTextArea.fill(promat_user_search);
+    await this.searchPromaptTextArea.fill(promat_user_search);
   }
 
   async enterPromaptQuery(follow_up_query) {
@@ -105,18 +180,16 @@ export class DeepAgentPage {
     await this.sendButton.click();
   }
 
-  async selectTheElementFromDropDown() {
+  async selectTheElementFromDropDown(label) {
     await this.submitButton.waitFor({ state: "visible" });
     await this.dropDown.waitFor({ state: "visible" });
     try {
       await this.dropDown.click();
-
-      await this.page.waitForTimeout(1000);
+      await this.page.waitForTimeout(2000);
       const selectElement = this.page.locator("select");
-
       // Ensure select is visible and attached before selecting
       await selectElement.waitFor({ state: "visible" });
-      await selectElement.selectOption({ label: "Default" });
+      await selectElement.selectOption({ label: label });
       const selected = await selectElement.inputValue();
       await this.page.keyboard.press("Enter");
       console.log("Selected value:", selected);
@@ -280,7 +353,7 @@ export class DeepAgentPage {
   async downloadFile() {
     try {
       // First check if any download buttons exist at all
-      const downloadButtonCount = await this.fileDownload.count();
+      const downloadButtonCount = await this.fileDownlaod.count();
       console.log(`Found ${downloadButtonCount} download buttons`);
 
       if (downloadButtonCount === 0) {
@@ -301,7 +374,7 @@ export class DeepAgentPage {
 
       try {
         // Make sure button is in viewport
-        await this.fileDownload.nth(lastIndex).scrollIntoViewIfNeeded();
+        await this.fileDownlaod.nth(lastIndex).scrollIntoViewIfNeeded();
         await this.page.waitForTimeout(1000); // Longer delay after scrolling
 
         // Set up download promise
@@ -314,7 +387,7 @@ export class DeepAgentPage {
 
         // Click with force option to ensure click happens
         console.log(`Clicking last download button (${lastIndex + 1})`);
-        await this.fileDownload
+        await this.fileDownlaod
           .nth(lastIndex)
           .click({ force: true, timeout: 10000 });
 
@@ -365,7 +438,7 @@ export class DeepAgentPage {
           );
 
           // Make sure button is in viewport
-          await this.fileDownload.nth(i).scrollIntoViewIfNeeded();
+          await this.fileDownlaod.nth(i).scrollIntoViewIfNeeded();
           await this.page.waitForTimeout(1000); // Longer delay after scrolling
 
           // Set up download promise
@@ -378,7 +451,7 @@ export class DeepAgentPage {
 
           // Click with force option to ensure click happens
           console.log(`Clicking download button ${i + 1}`);
-          await this.fileDownload.nth(i).click({ force: true, timeout: 10000 });
+          await this.fileDownlaod.nth(i).click({ force: true, timeout: 10000 });
 
           // Now wait for the download
           const download = await downloadPromise.catch((error) => {
@@ -448,7 +521,7 @@ export class DeepAgentPage {
 
   async downloadFilesFromViewer() {
     try {
-      // First check if view file button exists
+      await this.viewFile.first().waitFor({ state: "visible", timeout: 3000 });
       const viewFileCount = await this.viewFile.count();
       console.log(`Found ${viewFileCount} view file buttons`);
 
@@ -519,7 +592,7 @@ export class DeepAgentPage {
                 ),
               ]);
 
-              const fileName = download.suggestedFilename();
+              const fileName = await download.suggestedFilename();
               const filePath = path.join(this.downloadPath, fileName);
               await download.saveAs(filePath);
               console.log(`Zip file downloaded to: ${filePath}`);
@@ -602,18 +675,28 @@ export class DeepAgentPage {
   }
 
   async closeBrowserPopup() {
-    // Check if the popup is visible first
     try {
-      const isVisible = await this.browserPopup.isVisible();
-      if (isVisible) {
-        await this.browserPopup.click();
+      const popupCount = await this.browserPopup.count();
+      console.log(`Found ${popupCount} browser popups`);
+
+      if (popupCount > 0) {
+        console.log("Attempting to close browser popup");
+        await this.browserPopup.first().click({ force: true, timeout: 5000 });
         console.log("Browser popup closed successfully");
+        return true;
       } else {
-        console.log("Browser popup was not visible, nothing to close");
+        console.log("No browser popup found to close");
+        return false;
       }
     } catch (error) {
       console.error("Error closing browser popup:", error.message);
+      // Don't throw an error, just return false
+      return false;
     }
+  }
+
+  async closeBrowserPopup() {
+    await this.browserPopup.click();
   }
 
   async searchAndFetchAllResults() {
@@ -932,7 +1015,7 @@ export class DeepAgentPage {
       }
 
       // Get the total compute points
-      let totalComputePoints = 0;
+      let totalCreditPoints = 0;
       try {
         // Get the count of compute point elements
         const count = await this.computePoint.count();
@@ -951,17 +1034,17 @@ export class DeepAgentPage {
             const points = parseInt(pointsMatch[1].replace(/,/g, ""), 10);
 
             if (!isNaN(points)) {
-              totalComputePoints += points;
+              totalCreditPoints += points;
               console.log(
                 `Added ${points} points from element ${
                   i + 1
-                }, running total: ${totalComputePoints}`
+                }, running total: ${totalCreditPoints}`
               );
             }
           }
         }
         console.log(
-          `Total compute points (sum of all elements): ${totalComputePoints}`
+          `Total compute points (sum of all elements): ${totalCreditPoints}`
         );
       } catch (error) {
         console.error("Error calculating total compute points:", error.message);
@@ -971,8 +1054,9 @@ export class DeepAgentPage {
       const reportData = {
         taskDescription: searchedName,
         date: new Date(),
-        totalComputePoints: totalComputePoints,
+        totalCreditPoints: totalCreditPoints,
         timetaken: `${Number(this.elapsedTime.toFixed(2))} sec`,
+        conversationURL: await this.getConvoURL(),
         response: responseArray,
         search: searchArray,
         promptSearch: promptSearch,
@@ -1007,6 +1091,7 @@ export class DeepAgentPage {
       );
 
       console.log(`All search results and responses saved to: ${filePath}`);
+      console.log(`Conversation URL: ${await this.getConvoURL()}`);
       return reportData;
     } catch (error) {
       console.error("Error in searchAndFetchAllResults:", error.message);
@@ -1014,8 +1099,16 @@ export class DeepAgentPage {
     }
   }
 
-  async openSampleTaskWindow() {
-    await this.SampleTaskText.first().click();
+  async openSampelTaskWindow() {
+    try {
+      const elements = await this.sampleTaskDeafaultElement.all();
+      for (let i = 1; i < elements.length; i++) {
+        await elements[i].click();
+        break; // Break after clicking first element
+      }
+    } catch (error) {
+      console.error("Error in openSampelTaskWindow:", error.message);
+    }
   }
 
   async clickOnSampleTaskDefault(taskName) {
@@ -1030,7 +1123,7 @@ export class DeepAgentPage {
       const text = await element.textContent();
       console.log(`Checking task text: ${text}`);
 
-      if (text.includes(taskName)) {
+      if (text.toLowerCase().includes(taskName.toLowerCase())) {
         console.log(`Found matching task: ${taskName}`);
         await element.click();
         await this.page.waitForTimeout(1000);
@@ -1042,24 +1135,44 @@ export class DeepAgentPage {
     );
   }
 
-  async isDisplayedTaskDialogPopup() {
-    await this.sampleTaskDialogPopup.waitFor({ state: "visible" });
-    console.log("Task popup window is displayed");
-    return true;
+  async isDsipalyedTaskDialogePopup() {
+    try {
+      const isVisible = await this.sampleTaskDialogePopup.isVisible();
+      console.log(`Task dialog popup visibility status: ${isVisible}`);
+      return isVisible;
+    } catch (error) {
+      console.error(
+        "Error checking task dialog popup visibility:",
+        error.message
+      );
+      return false;
+    }
   }
 
-  async isDisplayedCancelButton() {
-    await this.cancelButton.waitFor({ state: "visible" });
-    console.log("Cancel button is displayed");
-    return true;
+  async isDsipalyedCancelButton() {
+    try {
+      const isVisible = await this.cancelButton.isVisible();
+      console.log(`Task Cancel button  visibility status: ${isVisible}`);
+      return isVisible;
+    } catch (error) {
+      console.error("Error checking Cancel button visibility:", error.message);
+      return false;
+    }
   }
 
-  async isDisplayedTryItButton() {
-    await this.tryItButton.waitFor({ state: "visible" });
-    console.log("Try it button is displayed");
-    return true;
+  async isDsipalyedtryItButton() {
+    try {
+      const isVisible = await this.tryItButton.isVisible();
+      console.log(`Task Try it button visibility status: ${isVisible}`);
+      return isVisible;
+    } catch (error) {
+      console.error(
+        "Error checking task Try it button visibility:",
+        error.message
+      );
+      return false;
+    }
   }
-
   async clickOncancelButton() {
     await this.cancelButton.click();
   }
@@ -1073,7 +1186,7 @@ export class DeepAgentPage {
     expectedStatus,
     computePointLimit
   ) {
-    const totalElements = await this.sampleTaskDefaultElement.count();
+    const totalElements = await this.sampleTaskDeafaultElement.count();
     console.log(`Processing ${totalElements} sample tasks`);
 
     for (let i = 0; i < totalElements; i++) {
@@ -1081,7 +1194,7 @@ export class DeepAgentPage {
         console.log(`Processing task ${i + 1} of ${totalElements}`);
 
         // Click on sample task and try it
-        await this.sampleTaskDefaultElement.nth(i).click();
+        await this.sampleTaskDeafaultElement.nth(i).click();
         await this.page.waitForTimeout(5000);
         await this.clickOnTryItButton();
         await this.page.waitForTimeout(5000);
@@ -1130,4 +1243,142 @@ export class DeepAgentPage {
       }
     }
   }
-}
+
+  async getConvoURL() {
+    try {
+      const currentUrl = await this.page.url();
+      // Log in a consistent format that can be parsed later
+      console.log(`Conversation URL: ${currentUrl}`);
+      return currentUrl;
+    } catch (error) {
+      console.error("Error getting conversation URL:", error.message);
+      throw error;
+    }
+  }
+
+  async getConvoId() {
+    try {
+      const currentUrl = await this.page.url();
+      await fs.mkdir(path.join(__dirname, "../urlData"), { recursive: true });
+      const filePath = path.join(__dirname, "../urlData/conversation_urls.txt");
+      const timestamp = new Date().toISOString();
+      const urlData = `${timestamp}\nConversation URL: ${currentUrl}\n\n`;
+      await fs.appendFile(filePath, urlData, "utf8");
+      console.log(`URL data saved to: ${filePath}`);
+      console.log(`Conversation URL: ${currentUrl}`);
+      return currentUrl;
+    } catch (error) {
+      console.error("Error saving conversation URL:", error.message);
+      throw error;
+    }
+  }
+
+  async clickOnChatBotLink() {
+    await this.CreatedChatBotlink.click();
+  }
+
+  async clickOnDeployLink() {
+    await this.deployLink.waitFor({ state: "visible", timeout: 10000 });
+    await this.deployLink.click({ force: true, timeout: 10000 });
+  }
+
+  async downloadComputeAgentFile() {
+    await fs.mkdir(this.downloadPath, { recursive: true });
+
+    const fileTypes = ["PDF", "PPTX"];
+
+    for (const type of fileTypes) {
+      await this.flexTypeFile.click();
+      await this.page.waitForTimeout(1000);
+
+      const optionCount = await this.fileTypeOptions.count();
+      for (let i = 0; i < optionCount; i++) {
+        const option = this.fileTypeOptions.nth(i);
+        const text = await option.innerText();
+        if (text.includes(type)) {
+          const isSelected =
+            (await option.getAttribute("data-state")) === "checked";
+          if (!isSelected) {
+            await option.click();
+            await this.page.waitForTimeout(1000);
+          }
+          break;
+        }
+      }
+
+      await this.computerFileDownloadOption.waitFor({ state: "visible" });
+      const downloadPromise = this.page.waitForEvent("download", {
+        timeout: 200000,
+      });
+      await this.computerFileDownloadOption.click();
+      await this.waitforStopButtonInvisble();
+      await this.spinLoadForFile.waitFor({ state: "hidden", timeout: 90000 });
+      const download = await downloadPromise;
+      const suggestedFileName = await download.suggestedFilename();
+      const fullPath = path.join(this.downloadPath, suggestedFileName);
+      await download.saveAs(fullPath);
+    }
+    await this.page.waitForTimeout(6000);
+  }
+  async verifyDownloadedFilesPptxandPdf() {
+    const texts = await this.page
+      .locator("p[class*='text-ellipsis']")
+      .allTextContents();
+    let hasPPTX = false;
+    let hasPDF = false;
+
+    for (const text of texts) {
+      if (text.includes(".pptx")) hasPPTX = true;
+      if (text.includes(".pdf")) hasPDF = true;
+    }
+
+    if (hasPPTX && hasPDF) return true;
+    if (!hasPPTX) throw new Error("PPTX file not found.");
+    if (!hasPDF) throw new Error("PDF file not found.");
+    await this.page.waitForTimeout(2000);
+  }
+
+
+  async verifyVideoGeneration(){
+      const previewVisible = await this.videoGenerationPreview.isVisible();
+      if (!previewVisible) return;
+      // const linkVisible = await this.videoGenerationLink.isVisible();
+      // if (!linkVisible) return;
+      await fs.mkdir(this.downloadPath, { recursive: true });
+      const [download] = await Promise.all([
+        this.page.waitForEvent('download'),
+        this.videoGenerationDownload.click(),
+      ]);
+      const suggestedFileName = download.suggestedFilename();
+      const filePath = path.join(this.downloadPath, suggestedFileName);
+      await download.saveAs(filePath);
+    }
+
+
+    async performSignUp()
+    {
+      await this.page.waitForTimeout(2000)
+      await this.signUpButton.click();
+      await this.nameField.fill("Test User");
+      await this.emailField.fill("testuser@gmail.com");
+      await this.passwordField.fill("password123");
+      await this.confirmPasswordField.fill("password123");
+      await this.createAccountButton.click();
+      await this.page.waitForTimeout(5000);
+    }
+    async verifyDataBase(tableName)
+    {
+      await this.dataBase.click();
+      await this.dropDownForDB.click();
+      await this.page.waitForTimeout(3000);
+      await this.page.getByRole('option', { name:tableName}).click();
+      await this.page.waitForTimeout(3000);
+      await this.refreshButton.click();
+      await this.page.waitForTimeout(3000);
+      await this.userAdded.isVisible();
+    }
+    
+  }
+
+
+
