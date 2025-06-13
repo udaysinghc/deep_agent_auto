@@ -663,6 +663,7 @@ Then(
   "the user completes the registration process successfully and verify the database",
   async function () {
     const originalPage = this.page;
+    await this.page.waitForTimeout(5000);
     deepAgentPage.clickOnDeployLink();
     const [newPage] = await Promise.all([
       this.page.context().waitForEvent("page"),

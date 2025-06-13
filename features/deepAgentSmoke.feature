@@ -54,8 +54,8 @@ Feature: Deep Agent Functionality Test
     Then I should see the search results for the default sample task
 
     Examples:
-      | promat_user_search  | follow_up_query                                   |
-      | Luxury Trip To Bali | Luxury mid-range budget relaxation for next month |
+      | promat_user_search  | follow_up_query                                                                                    |
+      | Luxury Trip To Bali | Plan a luxury mid-range vacation in Bali for next month and generate a downloadable itinerary file |
 
   @DeepAgentBrowserUse
   Scenario Outline: browseruse functionality
