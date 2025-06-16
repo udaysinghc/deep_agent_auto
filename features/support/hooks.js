@@ -78,19 +78,35 @@ Note: URL could not be captured
         `, 'text/plain');
       }
       
-      // Take screenshot if scenario fails
-      if (this.page) {
-        try {
-          const screenshotPath = `reports/failure-${Date.now()}.png`;
-          const screenshot = await this.takeScreenshot(screenshotPath);
-          if (screenshot) {
-            await this.attach(screenshot, 'image/png');
-            console.log(`📸 Screenshot saved: ${screenshotPath}`);
-          }
-        } catch (screenshotError) {
-          console.error('Failed to take failure screenshot:', screenshotError);
+     // Take screenshot if scenario fails
+if (this.page) {
+  try {
+    // Scroll all scrollable elements to the bottom
+    await this.page.evaluate(() => {
+      document.querySelectorAll('*').forEach(el => {
+        if (
+          el.scrollHeight > el.clientHeight &&
+          getComputedStyle(el).overflowY.match(/auto|scroll/)
+        ) {
+          el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
         }
-      }
+      });
+    });
+
+    // Wait a bit for smooth scrolling to complete
+    await this.page.waitForTimeout(1000);
+
+    const screenshotPath = `reports/failure-${Date.now()}.png`;
+    const screenshot = await this.takeScreenshot(screenshotPath);
+    if (screenshot) {
+      await this.attach(screenshot, 'image/png');
+      console.log(`📸 Screenshot saved: ${screenshotPath}`);
+    }
+  } catch (screenshotError) {
+    console.error('Failed to take failure screenshot:', screenshotError);
+  }
+}
+
       
       console.log('='.repeat(50));
     } else {

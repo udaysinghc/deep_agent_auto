@@ -140,8 +140,8 @@ export class DeepAgentPage {
 
   //  Perform the registration process-
   this.signUpButton = page.locator("//*[text()='Sign Up']");
-  this.nameField= page.locator("[placeholder*='full name']");
-  this.emailField= page.locator("[placeholder*='email']");
+  this.nameField= page.locator("//*[contains(@id,'fullName')] | //*[contains(@name,'fullName')] | //*[contains(@placeholder,'Your full name')]");;
+  this.emailField= page.locator("//*[contains(@id,'email')] | //*[contains(@name,'email')] | //*[contains(@type,'email')]");
   this.passwordField = page.locator("(//*[@type='password'])[1]");
   this.confirmPasswordField = page.locator("(//*[@type='password'])[2]");
 
@@ -1278,6 +1278,7 @@ export class DeepAgentPage {
   }
 
   async clickOnDeployLink() {
+    await this.previewButton.click();
     await this.deployLink.waitFor({ state: "visible", timeout: 10000 });
     await this.deployLink.click({ force: true, timeout: 10000 });
   }
@@ -1366,12 +1367,18 @@ export class DeepAgentPage {
       await this.createAccountButton.click();
       await this.page.waitForTimeout(5000);
     }
-    async verifyDataBase(tableName)
+    async verifyDataBase(possibleTableNames)
     {
       await this.dataBase.click();
       await this.dropDownForDB.click();
       await this.page.waitForTimeout(3000);
-      await this.page.getByRole('option', { name:tableName}).click();
+      for (const tableName of possibleTableNames) {
+        const option = this.page.getByRole('option', { name: tableName });
+        if (await option.isVisible()) {
+          await option.click();
+          break; 
+        }
+      }
       await this.page.waitForTimeout(3000);
       await this.refreshButton.click();
       await this.page.waitForTimeout(3000);
